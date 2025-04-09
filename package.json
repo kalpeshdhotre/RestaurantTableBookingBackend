@@ -1,16 +1,18 @@
 {
-  "name": "restauranttablebookingbackend",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "description": "",
-  "dependencies": {
-    "express": "^5.1.0"
-  }
+	"name": "restauranttablebookingbackend",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"description": "",
+	"dependencies": {
+		"express": "^5.1.0",
+		"mongoose": "^8.13.2",
+		"zod": "^3.24.2"
+	}
 }
