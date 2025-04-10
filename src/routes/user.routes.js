@@ -3,23 +3,17 @@ import { userModel, userValidator } from "../dbModels.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-	res.send("Hello World!");
-});
-
-router.get("/delete", (req, res) => {
-	res.send("User Deleted Successfully!");
-});
-
+// Create a new user
 router.post("/create", async (req, res) => {
 	try {
 		const userData = userValidator.parse(req.body);
-		const { email, firstName, phoneNumber } = userData;
+		const { email, firstName, phoneNumber, password } = userData;
 
 		const user = new userModel({
 			email,
 			firstName,
 			phoneNumber,
+			password,
 		});
 
 		await user.save();
@@ -28,6 +22,14 @@ router.post("/create", async (req, res) => {
 		console.error("Validation or save error:", error);
 		res.status(400).json({ error: "Could not save" });
 	}
+});
+
+router.get("/", (req, res) => {
+	res.send("Hello World!");
+});
+
+router.delete("/delete", (req, res) => {
+	res.send("User Deleted Successfully!");
 });
 
 export default router;
